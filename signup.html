@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta charset="utf-8" />
+        <title>Sign up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script>
+            var BASE_URL = 'localhost';
+            document.write("");
+        </script>
+        <link rel="icon" href="assets/upload/fav_1621917814.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="assets/upload/fav_1621917814.png" type="image/x-icon" />
+        <link rel="stylesheet" id="theme-style" href="assets/themes/307ef45hv52/css/app-orange.css">
+        <link rel="stylesheet" href="assets/themes/307ef45hv52/css/vendor.css" />
+        <link rel="stylesheet" href="https://cdn1.tdqm.download/assets/general/css/vendor.css" />
+        <style>
+            .header-block.header-block-buttons {
+                max-height: 80px !important;
+                overflow: hidden;
+            }
+            .note_version {
+                color: #fcff00;
+                background: #000000;
+                border: 1px solid #a9e2b8;
+                width: 100%;
+                padding: 3px 5px;
+                text-align: center;
+            }
+            .sidebar .sidebar-menu > li > a {
+                padding-top: 5px !important;
+                padding-bottom: 9px !important;
+            }
+            ::-webkit-scrollbar {
+                width: 10px !important;
+                border-radius: 10px !important;
+                height: 20px !important;
+                border-bottom-right-radius: 0;
+            }
+        </style>
+        <script>
+            function setCookie(name, value) {
+                var date = new Date();
+                date.setTime(date.getTime() + 1296000000);
+                expires = "; expires=" + date.toUTCString();
+
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(";");
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+        </script>
+    </head>
+    <body>
+        <style>
+            .auth-header {
+                background: #8e8e8e;
+            }
+            .auth-container {
+                margin-top: 10px;
+                height: 100% !important;
+                width: 650px !important;
+            }
+        </style>
+        <div class="auth">
+            <div class="auth-container">
+                <div class="card">
+                    <div class="auth-content">
+                        <p class="text-center">SIGNUP TO GET INSTANT ACCESS</p>
+                        <form action="/index.php/user/signup.html" action="" class="form-horizontal" id="form" method="post" accept-charset="utf-8">
+                            <div class="form-group">
+                                <label for="company" class="control-label">Company</label>
+                                <div class=""><input type="text" name="company" value="" id="company" placeholder="Company" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullname" class="control-label">Full Name *</label>
+                                <div class=""><input type="text" name="fullname" value="" id="fullname" placeholder="Your Full Name" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email *</label>
+                                <div class=""><input type="email" name="email" value="" id="email" placeholder="Your email address" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="info_phone" class="control-label">Phone number</label>
+                                <div class=""><input type="text" name="info_phone" value="" id="info_phone" placeholder="Your Phone number" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="info_contact" class="control-label">Address</label>
+                                <div class=""><input type="text" name="info_contact" value="" id="info_contact" placeholder="Your Address" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="control-label">Username *</label>
+                                <div class=""><input type="text" name="username" value="" id="username" placeholder="Username" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">Password *</label>
+                                <div class=""><input type="password" name="password" value="" id="password" placeholder="Enter password" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password2" class="control-label"></label>
+                                <div class=""><input type="password" name="password2" value="" id="password2" placeholder="Re-type password" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="note" class="control-label">About your experience</label>
+                                <div class=""><textarea name="note" cols="40" rows="10" id="note" placeholder="About your experience" class="form-control underlined"></textarea></div>
+                            </div>
+                            <div class="form-group"><button id="signup" type="submit" class="btn btn-block btn-primary">Signup</button></div>
+                            <div class="form-group">
+                                <p class="text-muted text-center">Do not have an account?<a href="/user/login.html">Login!</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="http://oladmedia.com/" class="btn btn-secondary btn-sm"> <i class="fa fa-arrow-left"></i> Home </a>
+                </div>
+                <footer class="footer"></footer>
+            </div>
+        </div>
+        <div class="ref" id="ref">
+            <div class="color-primary"></div>
+            <div class="chart">
+                <div class="color-primary"></div>
+                <div class="color-secondary"></div>
+            </div>
+        </div>
+        <script src="assets/themes/307ef45hv52/js/vendor_2.js"></script>
+        <script src="assets/themes/307ef45hv52/js/app.js"></script>
+        <link rel="stylesheet" href="assets/themes/307ef45hv52/css/alertify.core.css" />
+        <link rel="stylesheet" href="assets/themes/307ef45hv52/css/alertify.default.css" />
+        <script src="assets/themes/307ef45hv52/js/alertify.min.js"></script>
+
+    </body>
+    <!-- byQcodes -->
+</html>
+<script type="text/javascript">
+    function qcodes_js(json) {
+        var parsed;
+        try {
+            parsed = JSON.parse(json);
+        } catch (e) {}
+        return parsed;
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function action() {
+            var dataPost = { email: $("#email").val(), username: $("#username").val(), password: $("#password").val(), fullname: $("#fullname").val(), phone: $("#info_phone").val(), note: $("#note").val() };
+
+            var datas = JSON.stringify(dataPost);
+
+
+            alertify.success("Thanks You .Registration is complete. Approval time 3-5 days.");
+            setTimeout(function () {
+                window.location.replace("index.html");
+            }, 1300);
+
+
+            // $.ajax({
+            //     type: "post",
+            //     dataType: "json",
+            //     data: { datas: datas },
+            //     url: "/user/dashboard/check_signup",
+            //     success: function (data) {
+            //         console.log(data);
+            //         if (data.result == 0) {
+            //             alertify.success("Success! You can login now!");
+            //             setTimeout(function () {
+            //                 window.location.replace(BASE_URL + "user/login.html");
+            //             }, 1300);
+            //         } else {
+            //             animate({ name: "shake", selector: ".card" });
+            //             alertify.error("Wrong! Your email/username is taken!");
+            //         }
+            //     },
+            // });
+        }
+
+        if (!$("#form").length) {
+            alert("Div error!");
+            return false;
+        }
+        var ValidationSettings = {
+            rules: {
+                email: { required: true, email: true },
+                username: { required: true, email: false, minlength: 3 },
+                fullname: { required: true },
+                password: { required: true, minlength: 3 },
+                password2: { required: true, minlength: 3, equalTo: "#password" },
+            },
+            messages: {
+                fullname: { required: "Please enter your full name" },
+                email: { required: "Please enter your email" },
+                username: { required: "Please enter username", minlength: "Your username must be at least 3 characters long" },
+                password: { required: "Please enter a password", minlength: "Your password must be at least 3 characters long" },
+                password2: { required: "Please enter a password", minlength: "Your password must be at least 3 characters long" },
+            },
+            invalidHandler: function () {
+                animate({ name: "shake", selector: ".card" });
+            },
+            submitHandler: function (form) {
+                action();
+            },
+        };
+        $("#signup").on("click", function () {
+            $.extend(ValidationSettings, config.validations);
+            $("#form").validate(ValidationSettings);
+        });
+    });
+</script>

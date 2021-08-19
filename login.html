@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta charset="utf-8" />
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script>
+        	var BASE_URL = 'localhost';
+            document.write("");
+        </script>
+        <link rel="icon" href="assets/upload/fav_1621917814.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="assets/upload/fav_1621917814.png" type="image/x-icon" />
+        <link rel="stylesheet" id="theme-style" href="assets/themes/307ef45hv52/css/app-orange.css">
+        <link rel="stylesheet" href="assets/themes/307ef45hv52/css/vendor.css" />
+        <style>
+            .header-block.header-block-buttons {
+                max-height: 80px !important;
+                overflow: hidden;
+            }
+            .note_version {
+                color: #fcff00;
+                background: #000000;
+                border: 1px solid #a9e2b8;
+                width: 100%;
+                padding: 3px 5px;
+                text-align: center;
+            }
+            .sidebar .sidebar-menu > li > a {
+                padding-top: 5px !important;
+                padding-bottom: 9px !important;
+            }
+            ::-webkit-scrollbar {
+                width: 10px !important;
+                border-radius: 10px !important;
+                height: 20px !important;
+                border-bottom-right-radius: 0;
+            }
+        </style>
+        <script>
+            function setCookie(name, value) {
+                var date = new Date();
+                date.setTime(date.getTime() + 1296000000);
+                expires = "; expires=" + date.toUTCString();
+
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(";");
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+        </script>
+    </head>
+    <body>
+        <style>
+            .auth-header {
+                background: #8e8e8e;
+            }
+            .footer {
+                display: none;
+            }
+            input[type="checkbox"] {
+                -ms-transform: scale(1.4);
+                -moz-transform: scale(1.4);
+                -webkit-transform: scale(1.4);
+                -o-transform: scale(1.4);
+            }
+        </style>
+        <div class="auth">
+            <div class="auth-container">
+                <div class="card">
+                    <div class="auth-content">
+                        <p class="text-center">LOGIN TO CONTINUE</p>
+                        <form action="/index.php/user/login.html" action="" class="form-horizontal" id="form" method="post" accept-charset="utf-8">
+                            <div class="form-group">
+                                <label for="username" class="control-label">Username</label>
+                                <div class=""><input type="text" name="username" value="" id="username" placeholder="Your username/email address" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">Password</label>
+                                <div class=""><input type="password" name="password" value="" id="password" placeholder="******" class="form-control underlined" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="savelogin" class="control-label"><small>(Check this box if you use your personal computer)</small></label>
+                                <div class="">
+                                    <label class="checkbox form-control underlined"><input type="checkbox" name="savelogin" value="savelogincheck" id="savelogincheck" /> &nbsp; Save login 15 days (Only Admin)</label>
+                                </div>
+                            </div>
+                            <div class="form-group"><button id="login" type="submit" class="btn btn-block btn-primary">Login</button></div>
+                            <div class="form-group">
+                                <p class="text-muted text-center">Do not have an account? <a href="/user/signup.html">Sign Up!</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <footer class="footer"></footer>
+            </div>
+        </div>
+        <div class="ref" id="ref">
+            <div class="color-primary"></div>
+            <div class="chart">
+                <div class="color-primary"></div>
+                <div class="color-secondary"></div>
+            </div>
+        </div>
+        <script src="assets/themes/307ef45hv52/js/vendor_2.js"></script>
+        <script src="assets/themes/307ef45hv52/js/app.js"></script>
+        <link rel="stylesheet" href="assets/themes/307ef45hv52/css/alertify.core.css" />
+        <link rel="stylesheet" href="assets/themes/307ef45hv52/css/alertify.default.css" />
+        <script src="assets/themes/307ef45hv52/js/alertify.min.js"></script>
+    </body>
+</html>
+<script type="text/javascript">
+    function qcodes_js(json) {
+        var parsed;
+        try {
+            parsed = JSON.parse(json);
+        } catch (e) {}
+        return parsed;
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function action() {
+            var savelogin = 0;
+            if (document.getElementById("savelogincheck").checked) {
+                savelogin = 1;
+            }
+            var dataPost = { username: $("#username").val(), password: $("#password").val(), savelogin: savelogin };
+
+            var datas = JSON.stringify(dataPost);
+
+            alertify.error("Cannot login. Account being approved.");
+            animate({ name: "shake", selector: ".card" });
+            document.getElementById("login").disabled = false;
+            return false;
+        }
+
+        if (!$("#form").length) {
+            alert("Div error!");
+            return false;
+        }
+
+        var ValidationSettings = {
+            rules: { username: { required: true, email: false }, password: { required: true } },
+            messages: {
+                username: { required: "Please enter username" },
+                password: { required: "Please enter a password" },
+            },
+            invalidHandler: function () {
+                animate({ name: "shake", selector: ".card" });
+            },
+            submitHandler: function (form) {
+                action();
+                document.getElementById("login").disabled = true;
+            },
+        };
+        $("#login").on("click", function (e) {
+            $.extend(ValidationSettings, config.validations);
+            $("#form").validate(ValidationSettings);
+        });
+    });
+</script>
